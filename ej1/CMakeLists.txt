@@ -1,3 +1,3 @@
 cmake_minimum_required(VERSION 3.10)
-project(Ejercicio1)
-add_executable (Ej1 eji.cpp)
+project(Ejercicio1_JoelH)
+add_executable (Ej1_JH ej1.c)
