@@ -8,11 +8,11 @@ int main()
     
     float suma=0;
     
-    int entradas[10];
+    int entradas[len];
 
     cout << "Ingresar 10 numeros"<<endl;
 
-    for (int i=0;i<=len;i++)
+    for (int i=0;i<len;i++)
     { 
         cout<<"Numero "<<i+1<<": ";
         cin>>entradas[i];
