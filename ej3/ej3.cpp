@@ -7,11 +7,12 @@ int main ()
  cout << "Te pedire 10 numeros: "<< endl;
  for (int i=0; i<=9; i++)
  {
-   sum =  num + sum;
-   cout << "Ingrese el numero"<< i+1;
+  
+   cout << "Ingrese el numero "<< i+1 << " ";
    cin >> num;
+  sum=sum+num;
  }
  sum=sum/10;
- cout << "el resultado es" << sum << endl;
+ cout << "el resultado es " << sum << endl;
 return 0;
 }
