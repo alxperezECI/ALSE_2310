@@ -9,6 +9,7 @@ int main()
     float suma=0;
     
     int entradas[len];
+    // int entradas[]={1,2,3,4,5,6,7,8,9,10};
 
     cout << "Ingresar 10 numeros"<<endl;
 
@@ -18,7 +19,12 @@ int main()
         cin>>entradas[i];
         suma=suma+entradas[i];
     }
-
-    cout << "El promedio de las entradas es: " << suma/len <<endl;
+    
+    for(int i=0;i<len;i++)
+    {
+        cout<<entradas[i]<<" ";
+    }
+    
+    cout << "\nEl promedio de las entradas es: " << suma/len <<endl;
     return 0;
 }
