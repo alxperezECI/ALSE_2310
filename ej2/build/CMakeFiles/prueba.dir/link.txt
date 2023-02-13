@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/prueba.dir/dosint.cpp.o -o prueba 

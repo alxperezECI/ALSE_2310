@@ -1,0 +1,3 @@
+/home/jhonatan/Documents/ALSE_2310/ej3/build/CMakeFiles/prueba3.dir
+/home/jhonatan/Documents/ALSE_2310/ej3/build/CMakeFiles/edit_cache.dir
+/home/jhonatan/Documents/ALSE_2310/ej3/build/CMakeFiles/rebuild_cache.dir

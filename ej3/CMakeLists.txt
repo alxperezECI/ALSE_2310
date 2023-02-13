@@ -1,0 +1,3 @@
+cmake_minimum_required (VERSION 3.10)
+project (prep)
+add_executable(prueba3 ej3.cpp)
