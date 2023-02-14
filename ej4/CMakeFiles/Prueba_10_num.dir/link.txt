@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/Prueba_10_num.dir/Programa_10_num.cpp.o -o Prueba_10_num 
