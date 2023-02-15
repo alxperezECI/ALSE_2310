@@ -9,7 +9,7 @@ s = 0;
 cout <<"Ingresar 10 números para obtener su promedio. \n";
 
 for (int i=0; i<=9;i=i+1){
-cout <<"Ingrese un número:";
+cout <<"Ingrese el número "<<i+1<<":";
 cin >> arreglo[i];
 s = s + arreglo[i];
 }
