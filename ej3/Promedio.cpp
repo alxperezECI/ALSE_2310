@@ -6,7 +6,7 @@ float arreglo[10];
 float s;
 float prom;
 s = 0;
-cout <<"Ingresar 10 números para obtener su promedio. \n";
+cout <<"Ingresar 10 números para obtener el promedio. \n";
 
 for (int i=0; i<=9;i=i+1){
 cout <<"Ingrese el número "<<i+1<<":";
