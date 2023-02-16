@@ -2,28 +2,27 @@
 
 using namespace std;
 
-float promedio( int v[] ){
-  float prom = 0.;
+float mediana( int Vec[] ){
+  float med;
   
-  for( int i = 0; i < 10; i++){
-    prom += v[i];
-  }
+  med = (Vec[4]+Vec[5])/2.;
   
-  return prom / 10.;
+  return med;
 }
 
 int main(){
-  int vec[10];
-  float prom=0.;
+  int arreglo[10];
+  float med;
 
-  cout << "Ingresar diez (10) número enteros: ";
-
+  cout << "Ingresar diez números enteros para obtener su mediana: \n ";
+ 
   for( int i = 0; i < 10; i++){
-    cin >> vec[i];
+    cout << "Ingrese el numero " << i+1 << ":";
+    cin >> arreglo[i];
   }
 
-  prom = promedio( vec );
+  med = mediana(arreglo);
 
-  cout << "El promedio de los datos ingresados es: " << prom << "\n";
+  cout << "La mediana de los datos ingresados es: " << med << "\n";
   return 0;
 }
