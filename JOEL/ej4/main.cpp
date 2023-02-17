@@ -9,14 +9,14 @@ using namespace std;
 // 4. float suma(int vec[])
 // 5. float promedio(int vec[])
 
-float promedio( int v[], float len ){
+float promedio( int v[], int len ){
    float prom = 0.;
 
    for( int i = 0; i < len; i++){
      prom += v[i];
    }
 
-   return prom / len;
+   return prom / (float)len;
  }
 
 int printvec(int vec[], int len, string msg)
@@ -36,13 +36,13 @@ float mediana(int vec[],int len, bool imprimir_ordenado)
     int v_org[len]; 
     int aux;
 
-    // Copiar vec en v_org
+    // Copiar vec en v_org.
     for(int i=0;i<len;i++)
     {
         v_org[i]=vec[i];
     }
     
-    // Ordenar el vector
+    // Ordenar el vector v_org.
     for(int j=0; j<len;j++)
     {
         for(int i=0;i<len;i++)
@@ -65,13 +65,13 @@ float mediana(int vec[],int len, bool imprimir_ordenado)
         }
     }
 
-    // Imprimir vector ordenado
+    // Imprimir vector v_org ordenado.
     if(imprimir_ordenado)
     {
         printvec(v_org,len,"Vector ordenado: ");
     }
-    // Calcular mediana
-
+    
+    // Calcular mediana.
     if (len%2==0)
     {
         return (vec[len/2-1]+vec[len/2])/2.0;
@@ -81,19 +81,16 @@ float mediana(int vec[],int len, bool imprimir_ordenado)
         return vec[len/2];
     }
 
-
-    
     // return vec;
 }
 
-
-
 int main(){
 
-  int vec[10];
+  int len=10;
+  int vec[len];
   float prom=0.;
   float med;
-  int len=10;
+  
 
   cout << "Ingresar diez ("<<len<<") número enteros:\n";
 
