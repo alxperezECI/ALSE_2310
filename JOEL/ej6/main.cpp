@@ -24,13 +24,13 @@ int printvec(int vec[], int len, string msg)
     return 0;
 }
 
-float mediana(int vec[],int len, bool imprimir_ordenado)
+int vec_org(int vec[], int len)
 {
     int v_org[len]; 
     int aux;
 
     // Copiar vec en v_org.
-    for(int i=0;i<len;i++)
+   for(int i=0;i<len;i++)
     {
         v_org[i]=vec[i];
     }
@@ -57,6 +57,43 @@ float mediana(int vec[],int len, bool imprimir_ordenado)
             }
         }
     }
+
+    return v_org[len];
+}
+
+float mediana(int vec[],int len, bool imprimir_ordenado)
+{
+    int v_org[len]; 
+    int aux;
+
+    // Copiar vec en v_org.
+   /*  for(int i=0;i<len;i++)
+    {
+        v_org[i]=vec[i];
+    }
+    
+    // Ordenar el vector v_org.
+    for(int j=0; j<len;j++)
+    {
+        for(int i=0;i<len;i++)
+        {
+            if(i+1==len)
+                break;
+            else
+            {
+                if(v_org[i]>v_org[i+1])
+                {
+                    aux=v_org[i];
+                    v_org[i]=v_org[i+1];
+                    v_org[i+1]=aux;
+                }
+                else
+                {
+                    continue;  
+                }      
+            }
+        }
+    } */
 
     // Imprimir vector v_org ordenado.
     if(imprimir_ordenado)
@@ -125,8 +162,8 @@ int main(int argc, char** argv){
     vec[i]=stoi(argv[i]);
   }
 
-  prom = promedio( vec, 10 );
+/*   prom = promedio( vec, 10 );
 
-  cout << "El promedio de los datos ingresados es: " << prom << "\n";
+  cout << "El promedio de los datos ingresados es: " << prom << "\n"; */
   return 0;
 }
