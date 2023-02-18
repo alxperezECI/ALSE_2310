@@ -141,7 +141,7 @@ int main(int argc, char** argv){
   for(int i=0; i< argc; i++)  
     cout << argv[i] << endl;
 
-  int vec[10];
+  int vec[len];
   float prom=0.;
 
   // Creación de un puntero
@@ -157,12 +157,12 @@ int main(int argc, char** argv){
   */
 
   // leer argumentos de main en vec y convertirlos a enteros
-  for( int i = 1; i < 10; i++){
+  for( int i = 1; i < len; i++){
     // cin >> vec[i];
     vec[i]=stoi(argv[i]);
   }
 
-/*   prom = promedio( vec, 10 );
+/*   prom = promedio( vec, len );
 
   cout << "El promedio de los datos ingresados es: " << prom << "\n"; */
   return 0;
