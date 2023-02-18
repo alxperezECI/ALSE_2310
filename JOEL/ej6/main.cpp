@@ -12,6 +12,71 @@ float promedio( int v[], int cant ){
   return prom / (float)cant;
 }
 
+int printvec(int vec[], int len, string msg)
+{
+    // flush(cout);
+    cout<<"\n"<<msg<<endl;
+    for(int i=0;i<len;i++)
+    {
+        cout<<vec[i]<<" ";
+    }
+    cout<<endl;
+    return 0;
+}
+
+float mediana(int vec[],int len, bool imprimir_ordenado)
+{
+    int v_org[len]; 
+    int aux;
+
+    // Copiar vec en v_org.
+    for(int i=0;i<len;i++)
+    {
+        v_org[i]=vec[i];
+    }
+    
+    // Ordenar el vector v_org.
+    for(int j=0; j<len;j++)
+    {
+        for(int i=0;i<len;i++)
+        {
+            if(i+1==len)
+                break;
+            else
+            {
+                if(v_org[i]>v_org[i+1])
+                {
+                    aux=v_org[i];
+                    v_org[i]=v_org[i+1];
+                    v_org[i+1]=aux;
+                }
+                else
+                {
+                    continue;  
+                }      
+            }
+        }
+    }
+
+    // Imprimir vector v_org ordenado.
+    if(imprimir_ordenado)
+    {
+        printvec(v_org,len,"Vector ordenado: ");
+    }
+    
+    // Calcular mediana.
+    if (len%2==0)
+    {
+        return (vec[len/2-1]+vec[len/2])/2.0;
+    }
+    else
+    {
+        return vec[len/2];
+    }
+
+    // return vec;
+}
+
 /*
 float promedio( float v[], int cant ){
   float prom = 0.;
