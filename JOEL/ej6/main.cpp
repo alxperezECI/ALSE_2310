@@ -12,7 +12,7 @@ float promedio( int v[], int cant ){
   return prom / (float)cant;
 }
 
-int printvec(int vec[], int len, string msg)
+void printvec(int vec[], int len, string msg)
 {
     // flush(cout);
     cout<<"\n"<<msg<<endl;
@@ -21,7 +21,6 @@ int printvec(int vec[], int len, string msg)
         cout<<vec[i]<<" ";
     }
     cout<<endl;
-    return 0;
 }
 
 float mediana(int vec[],int len, bool imprimir_ordenado)
