@@ -9,7 +9,7 @@ float promedio( int v[], int cant ){
     prom += v[i];
   }
   
-  return prom / (float)cant;
+  return (prom / (float)cant);
 }
 
 void printvec(int vec[], int len, string msg)
@@ -118,10 +118,12 @@ int main(int argc, char** argv){
   */
 
   // leer argumentos de main en vec y convertirlos a enteros
-  for( int i = 1; i < len; i++){
+  for( int i = 1; i < argc ; i++){
     // cin >> vec[i];
-    vec[i]=stoi(argv[i]);
+    vec[i-1]=stoi(argv[i]);
   }
+
+  printvec(vec,len,"Vector original: ");
 
   prom = promedio( vec, len );
 
