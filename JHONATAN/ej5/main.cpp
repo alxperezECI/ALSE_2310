@@ -2,14 +2,14 @@
 
 using namespace std;
 
-float mediana( int v[], cant ){
+float mediana( int v[], int cant ){
   float med = 0.;
   
   med = (v[4]+v[5])/2.;
   return med;
 }
 
-int main(int argc, char** argv)
+int main()
 {
 
   int vec[10];
@@ -23,9 +23,11 @@ int main(int argc, char** argv)
     cin >> vec[i];
   } */
   
-  for (int i=0, i< argc -1, i++)
+  for (int i=0; i< 10; i++)
 {
-  vec[i] = atof(argv[i+1]);
+  cout << "ingrese el numero "<< i+1 << ":"; 
+  cin >> vec[i];
+}
 
   med = mediana( vec, 10 );
 
