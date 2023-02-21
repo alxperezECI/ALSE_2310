@@ -6,11 +6,11 @@ float mediana( int v[], int cant ){
   float med = 0.;
   int prueba=0;
   prueba = (cant/2);
-  prueba =prueba *2;
+  prueba =prueba * 2;
  
   if (cant != prueba)
   {
-     med =v[cant+1];
+     med = v[(cant/2)];
   }
   else
   {
