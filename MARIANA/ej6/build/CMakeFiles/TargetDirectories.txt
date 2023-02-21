@@ -1,0 +1,3 @@
+/home/mariana/Documents/ALSE_2310/MARIANA/ej6/build/CMakeFiles/ej6.dir
+/home/mariana/Documents/ALSE_2310/MARIANA/ej6/build/CMakeFiles/edit_cache.dir
+/home/mariana/Documents/ALSE_2310/MARIANA/ej6/build/CMakeFiles/rebuild_cache.dir
