@@ -90,12 +90,12 @@ float promedio( float v[], int cant ){
 
 int main(int argc, char** argv){
 
-  int len=10;
+  int len=argc-1;
   
-  if(argc!=len+1){
+/*   if(argc!=len+1){
     cout << "Cantidad de argumentos incorrecta" << endl;
     return 1;
-  }
+  } */
 
   cout << "Cantidad de argumentos: " << argc << endl;
 
