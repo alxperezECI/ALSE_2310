@@ -43,7 +43,7 @@ int main(){
     cin >> vec[i];
   }
 
-  prom = promedio( vec );
+  prom = promedio( vec, 10 );
 
   cout << "El promedio de los datos ingresados es: " << prom << "\n";
   return 0;
