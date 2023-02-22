@@ -28,6 +28,6 @@ int main(){
 
   med = mediana(arreglo);
 
-  cout << "La mediana de los datos ingresados es: " << med << "\n";
+  cout << "La mediana de los datos ingresados es: " << *dirmed << "\n";
   return 0;
 }
