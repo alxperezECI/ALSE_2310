@@ -10,7 +10,7 @@ double distancia( Punto a, Punto b){
   return sqrt(pow((b.y - a.y),2) + pow((b.x - a.x),2));
 };
 
-float pendiente( Punto a, Punto b){
+float pendiente( const Punto &a , const Punto &b ) {
   return (b.y - a.y)/(b.x - a.x);
 };
 
