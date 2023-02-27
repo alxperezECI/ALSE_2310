@@ -7,11 +7,11 @@ struct Punto{
 };
 
 struct Linea{
-  Punto a,b;
+  Punto p1,p2;
 };
 
 ostream& operator<< (ostream& out, Punto &a){
-  out << "El punto es (" << a.x << ", " << a.y << ")" << endl;
+  out << "(" << a.x << ", " << a.y << ")";
   return out;
 }
   
@@ -27,22 +27,30 @@ double distancia( const Punto &a, const Punto &b ){
   return sqrt( x * x  + y * y );
 }
 
-/*
+
 double longitud(Linea a){
-  double a = distancia( a.a, a.b) ;
-  return a;
+  return  distancia( a.p1, a.p2) ;
 }
-*/
+
 int main(int argc, char** argv){
   Punto a, b;
   double dist;
-  a.x = 3.;
-  a.y = 4.;
-  b.x = 8.;
-  b.y = 6.;
+  a.x = 3.14;
+  a.y = 4.68;
+  b.x = 8.55;
+  b.y = 6.68;
 
   dist = distancia(a,b);
-  cout << "Entre " << a << " y  " << b;
-  cout << "La distancia entre ellos es: " << dist << endl;
+  cout << "Entre " << a << " y " << b;
+  cout << " la distancia es: " << dist << endl;
+
+  Linea c;
+  c.p1.x = 3.2;
+  c.p1.y = 6.666;
+  c.p2.x = 4.4;
+  c.p2.y = 8.8;
+
+  cout << "La línea es de longitud: " << longitud( c ) << endl;
+
   return 0;
 }
