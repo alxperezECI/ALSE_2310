@@ -6,10 +6,16 @@ class Complejo{
   double re,im;
 
 public:
-  bool setRe( double r );
-  bool setIm( double i );
-  double distancia( const Complejo &b );
+  double   getRe();
+  bool     setRe( double r );
+  double   getIm();
+  bool     setIm( double i );
+  double   distancia( const Complejo &b );
   Complejo operator+(Complejo &a);
-  friend ostream& operator<< (ostream& out, Complejo &a);
+  Complejo operator-(Complejo &a);
+  Complejo operator*(Complejo &a);
+  Complejo conjugado();
+  Complejo inverso();
+  friend   ostream& operator<< (ostream& out, Complejo &a);
 };
 
