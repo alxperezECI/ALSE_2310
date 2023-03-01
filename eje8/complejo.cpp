@@ -33,3 +33,30 @@ ostream& operator<< (ostream& out, Complejo &a){
   }
   
 
+double   Complejo::getRe(){
+  return re;
+}
+
+double    Complejo::getIm(){
+  return im;
+}
+
+Complejo  Complejo::operator-(Complejo &a){
+  Complejo c;
+  return c;
+}
+
+Complejo  Complejo::operator*(Complejo &a){
+  Complejo c;
+  return c;
+}
+
+Complejo  Complejo::conjugado(){
+  Complejo c;
+  return c;
+}
+
+Complejo  Complejo::inverso(){
+  Complejo c;
+  return c;
+}
