@@ -6,6 +6,9 @@ class Complejo{
   double re,im;
 
 public:
+  Complejo();
+  Complejo( Complejo &a );
+  Complejo(double r, double i );
   double   getRe();
   bool     setRe( double r );
   double   getIm();
