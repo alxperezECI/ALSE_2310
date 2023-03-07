@@ -29,7 +29,7 @@ Complejo Complejo::operator+(Complejo &a){
   }
 
 ostream& operator<< (ostream& out, Complejo &a){
-    out  << a.re << " + " << a.im << "j";
+    out  << a.re << ( a.im < 0? " - ": " + ") << abs(a.im) << "j";
     return out;
   }
   
@@ -42,6 +42,17 @@ double    Complejo::getIm(){
   return im;
 }
 
+
+double Complejo::angulo()
+{
+   return atan2(im, re);
+}
+
+double Complejo::modulo()
+{
+    return sqrt(re*re + im*im);
+}
+
 Complejo  Complejo::operator-(Complejo &a){
   Complejo c;
   c.re = re - a.re;
@@ -51,6 +62,8 @@ Complejo  Complejo::operator-(Complejo &a){
 
 Complejo  Complejo::operator*(Complejo &a){
   Complejo c;
+  c.re = re * a.re - im * a.im;
+  c.im = re * a.im - im * a.re;
   return c;
 }
 
@@ -66,4 +79,5 @@ Complejo  Complejo::inverso(){
   c.re = re/(re*re + im*im);
   c.im = -im/(re*re + im*im);
   return c;
+
 }

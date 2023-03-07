@@ -12,6 +12,8 @@ public:
   double   getIm();
   bool     setIm( double i );
   double   distancia( const Complejo &b );
+  double angulo ();
+  double modulo ();
   Complejo operator+(Complejo &a);
   Complejo operator-(Complejo &a);
   Complejo operator*(Complejo &a);

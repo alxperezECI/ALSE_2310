@@ -30,8 +30,10 @@ int num_argumentos (int a)
 int main(int argc, char** argv){
   Complejo a, b, tercero, suma, resta, inverso1, inverso2, conjugado1, conjugado2;
   double dist;
-  int op;
+  int op=0;
   int cant_arg;
+  double angulo;
+  double modulo;
   char operacion[2];
   strcpy (operacion, argv[1]);
   a.setRe ( atof(argv[2]) );
@@ -44,20 +46,23 @@ int main(int argc, char** argv){
   {
    op = 1;
   }
-  else if (operacion[1] == 'r')
+    else if (operacion[1] == 'r')
+    {
+      op = 2;
+    }
+      else if (operacion[1] == 'i')
+      {
+       op = 3;
+      }
+        else if (operacion[1] == 'c')
+        {
+          op = 4;
+        }
+  else
   {
-   op = 2;
+   cout << "operacion invalida" << endl;
   }
-  else if (operacion[1] == 'i')
-  {
-   op = 3;
-  }
-  else if (operacion[1] = 'c')
-  {
-   op = 4;
-  }
-  else 
-  cout << "operacion invalida" << endl;
+
 
   cout << "op es :" << op << endl;
   
@@ -79,16 +84,16 @@ int main(int argc, char** argv){
            conjugado2 = b.conjugado();
            cout << "El conjugado de b " << b << " es: " << conjugado2 << endl;
    break;
+   default:
+           cout << "Los argumentos no son los indicados" << endl;
   }
 
-
+  angulo = a.angulo();
+  modulo = a.modulo ();
+  cout << "el angulo es " << angulo << " y el modulo " << modulo << endl;
   cant_arg = num_argumentos (argc);
   cout << "argv[1] es " << atoi(argv[1]) << " y cant_arg " << cant_arg <<endl;
-  cout << " la distancia es: " << dist << endl;
-
-  tercero = a + b;
-
-  cout << "La suma de " << a << " + " << b << "es igual a " << tercero << endl;
+ 
 
   return 0;
 }
