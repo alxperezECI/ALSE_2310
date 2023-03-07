@@ -1,6 +1,8 @@
-#include <iostream>
+
+ #include <iostream>
 #include <math.h>
 #include "complejo.h"
+
 
 using namespace std;
 // Utilizando los parámetros del main admita 4 valores el primero dos caracteres
@@ -14,7 +16,6 @@ using namespace std;
 //
 //  Deberán implementar correctamente en el archivo complejo.cpp todos 
 //  los métodos definidos en el archivo complejo.h
-
 int main(int argc, char** argv){
   Complejo a, b, tercero;
   double dist;
@@ -23,6 +24,7 @@ int main(int argc, char** argv){
   b.setRe( 8.55 );
   b.setIm( 6.68 );
   dist = a.distancia( b );
+  tam = tamaño (atof argv[1])
   cout << " la distancia es: " << dist << endl;
 
   tercero = a + b;
