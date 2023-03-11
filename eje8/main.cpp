@@ -36,6 +36,7 @@ int main(int argc, char** argv){
 =======
 >>>>>>> b8c52298807a865ac68734234e66a5d5511feed1
 
+  cout << a << ", " << b << ", " << tercero << endl;
   a.setRe( atof( argv[2] ) );
   a.setIm( atof( argv[3] ) );
   b.setRe( atof( argv[4] ) );
