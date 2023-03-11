@@ -1,0 +1,3 @@
+/home/alse/Documents/ALSE_2310/eje7/build/CMakeFiles/ej7.dir
+/home/alse/Documents/ALSE_2310/eje7/build/CMakeFiles/edit_cache.dir
+/home/alse/Documents/ALSE_2310/eje7/build/CMakeFiles/rebuild_cache.dir
