@@ -3,6 +3,7 @@
 #include <complex>
 #include <fstream>
 #include <string>
+#include <cstddef>
 
 using namespace std;
 
@@ -23,31 +24,40 @@ int main(int argc, char** argv){
   while( getline( input, texto) ){
     lineas++;
   }
-  
-  input.close();
-  
-  cout << "Leídas " << lineas << " líneas." << endl;
-  complex<double> *vec = new complex<double>[lineas] ;
 
+  input.close();
+
+  cout << "Leídas " << lineas << " líneas." << endl;
+  complex <double> *vec = new complex <double> [lineas];
 
   input.open( argv[1] );  // Se abre nuevamente el archivo para leer los datos.
 
+  size_t pos, pos2;
+  string real, ima;
+  char signo = '+', neg = '-', j = 'j';
   for(int  i = 0; i < lineas; i++ ){
-    getline( input, texto);  // Aquí se leyó la línea y ahora falta procesarla para extraer la
+    getline( input, texto);  // Aquí se leyó la línea y Sahora falta procesarla para extraer la
                              // parte real y a parte imaginaria  ej: -3.14 + 2.67j
-
-    vec[i].real( atof( argv[2*i + 1] ) );
-    vec[i].imag( atof( argv[2*i + 2] ) );
+    pos = texto.find_first_of(signo);
+    if (pos == std::string::npos){
+        pos = texto.find_last_of(neg);
+    }
+    pos2 = texto.find_first_of(j);
+    real = texto.substr(0,pos);
+    ima = texto.substr(pos+1,(pos2-1)-(pos+1));
+    vec[i].real( stof( real) );
+    vec[i].imag( stof( ima ) );
   }
 
   input.close();  // Se cierra el archivo
 
-  bool again;
+
+ /* bool again;
   complex<double> aux;
 
   do{
     again = false;
-      
+
     for( int i = 0; i < 4; i++){
 
 
@@ -67,19 +77,16 @@ int main(int argc, char** argv){
         }
       }
     }
-  }while( again == true ); 
-
+  }while( again == true );*/
 
   ofstream output("output.txt");  // Se crea el objeto para abrir el archivo de escritura
 
-
   for(int  i = 0; i < lineas; i++ ){
-    ouput << vec[i].real() << ( vec[i].imag() < 0? " - "; " + " ) << vec[i].imag << "j" << endl;
+    output<< vec[i].real() << ( vec[i].imag() < 0? " - ": " + " ) << vec[i].imag() << "j" << endl;
     cout << vec[i] << "<" << arg( vec[i] ) << endl;
   }
-  
-  output.close();  // Se cierra el archivo de escritura.
 
+  output.close();  // Se cierra el archivo de escritura.
+  delete [] vec;
   return 0;
 }
-
