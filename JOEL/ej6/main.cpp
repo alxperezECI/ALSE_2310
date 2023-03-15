@@ -2,24 +2,17 @@
 
 using namespace std;
 
-//Funciones:
-// 1. float maximos(int vec[])
-// 2. float minimos(int vec[])
-// 3. float mediana(int vec[]) [√]
-// 4. float suma(int vec[])
-// 5. float promedio(int vec[])
+float promedio( int v[], int cant ){
+  float prom = 0.;
+  
+  for( int i = 0; i < cant; i++){
+    prom += v[i];
+  }
+  
+  return (prom / (float)cant);
+}
 
-float promedio( int v[], int len ){
-   float prom = 0.;
-
-   for( int i = 0; i < len; i++){
-     prom += v[i];
-   }
-
-   return prom / (float)len;
- }
-
-int printvec(int vec[], int len, string msg)
+void printvec(int vec[], int len, string msg)
 {
     // flush(cout);
     cout<<"\n"<<msg<<endl;
@@ -28,7 +21,6 @@ int printvec(int vec[], int len, string msg)
         cout<<vec[i]<<" ";
     }
     cout<<endl;
-    return 0;
 }
 
 float mediana(int vec[],int len, bool imprimir_ordenado)
@@ -37,7 +29,7 @@ float mediana(int vec[],int len, bool imprimir_ordenado)
     int aux;
 
     // Copiar vec en v_org.
-    for(int i=0;i<len;i++)
+   for(int i=0;i<len;i++)
     {
         v_org[i]=vec[i];
     }
@@ -84,31 +76,58 @@ float mediana(int vec[],int len, bool imprimir_ordenado)
     // return vec;
 }
 
-int main(){
+/*
+float promedio( float v[], int cant ){
+  float prom = 0.;
+  
+  for( int i = 0; i < cant; i++){
+    prom += v[i];
+  }
+  
+  return prom / (float)cant;
+}
+*/
 
-  int len=10;
+int main(int argc, char** argv){
+
+  int len=argc-1;
+  
+/*   if(argc!=len+1){
+    cout << "Cantidad de argumentos incorrecta" << endl;
+    return 1;
+  } */
+
+  cout << "Cantidad de argumentos: " << argc << endl;
+
+  for(int i=0; i< argc; i++)  
+    cout << argv[i] << endl;
+
   int vec[len];
   float prom=0.;
-  float med;
+
+  // Creación de un puntero
+  /*
+  float* dirProm;
+
+  cout << "Vector creado en dirección: " << vec << endl;
+  cout << "Dirección de v[9]: " << &vec[9] << endl;
   
+  dirProm = &prom;
+  cout << "Dirección de prom: " << dirProm << " almacenado en: " << &dirProm << endl;
+  cout << "Ingresar diez (10) número enteros: ";
+  */
 
-  cout << "Ingresar diez ("<<len<<") número enteros:\n";
-
-  for( int i = 0; i < 10; i++){
-   
-    cout<<"Numero "<<i+1<<": ";
-    cin >> vec[i];
+  // leer argumentos de main en vec y convertirlos a enteros
+  for( int i = 1; i < argc ; i++){
+    // cin >> vec[i];
+    vec[i-1]=stoi(argv[i]);
   }
 
   printvec(vec,len,"Vector original: ");
 
-  prom = promedio( vec,len );
+  prom = promedio( vec, len );
 
-  cout << "\nEl promedio de los datos ingresados es: " << prom << "\n";
+  cout << "El promedio de los datos ingresados es: " << prom << "\n";
 
-  med=mediana(vec,len,true);
-
-  cout << "\nLa mediana de los datos ingresados es: " << med << "\n";
-  
   return 0;
 }
